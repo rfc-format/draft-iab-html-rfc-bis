@@ -1,0 +1,35 @@
+{
+  "name": "draft-hildebrand-html-rfc",
+  "version": "1.0.0",
+  "description": "Tools for building xml2rfcv3 docs",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "bluebird": "3.3",
+    "express": "4.13",
+    "jade": "1.11",
+    "libxmljs": "0.18",
+    "resolve": "1.1",
+    "rfc-preptool": "latest",
+    "romanize": "0.1",
+    "through2": "2.0",
+    "vinyl-fs": "2.4",
+    "xmljade": "latest"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hildjj/draft-hildebrand-html-rfc.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/hildjj/draft-hildebrand-html-rfc/issues"
+  },
+  "homepage": "https://github.com/hildjj/draft-hildebrand-html-rfc"
+}

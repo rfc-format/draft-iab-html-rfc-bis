@@ -1,0 +1,11 @@
+{
+  "dentin-ignore": [
+    "artwork",
+    "sourcecode",
+    "pre",
+    "script"
+  ],
+  "define": {
+    "mode": "ID"
+  }
+}

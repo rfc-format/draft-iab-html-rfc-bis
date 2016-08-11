@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rfc ipr='trust200902' xmlns:xi='http://www.w3.org/2001/XInclude'>
+  <front>
+    <title>test</title>
+    <author/>
+  </front>
+  <middle>
+    <section>
+      <name>None</name>
+      <t><xref target='STD69'/> &amp; <xref target='RFC5731'/></t>
+    </section>
+  </middle>
+  <back>
+    <displayreference target="STD69" to="_EPP"/>
+    <displayreference target="RFC5731" to="3"/>
+    <references>
+      <name>Informational</name>
+      <referencegroup anchor="STD69">
+        <xi:include href='localhost/reference.RFC.5734.xml'/>
+        <xi:include href='localhost/reference.RFC.5730.xml'/>
+      </referencegroup>
+      <xi:include href='localhost/reference.RFC.5731.xml'/>
+    </references>
+  </back>
+</rfc>

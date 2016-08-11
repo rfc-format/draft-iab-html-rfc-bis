@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<rfc>
+  <front>
+    <title>None</title>
+    <author/>
+  </front>
+  <middle>
+    <section>
+      <name>A section of figures</name>
+      <figure>
+        <name>huh</name>
+        <artwork originalSrc="circle.svg" type="svg">
+          <svg height="100"
+               width="100"
+               xmlns="http://www.w3.org/2000/svg">
+            <desc>A circle has a desc</desc>
+            <circle cx="50"
+                    cy="50"
+                    fill="white"
+                    r="40"
+                    stroke="black"
+                    stroke-width="4"/>
+          </svg>
+        </artwork>
+      </figure>
+      <figure anchor='nope'>
+        <name>Texty</name>
+        <artwork src="localhost/redbluecircle.svg" type="text"/>
+      </figure>
+      <figure anchor='yep'>
+        <artwork src="localhost/redbluecircle.svg" type="text"/>
+      </figure>
+    </section>
+  </middle>
+</rfc>

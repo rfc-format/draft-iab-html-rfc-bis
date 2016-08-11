@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<rfc tocDepth="2">
+  <front>
+    <title>Base Document</title>
+    <author fullname='Joe Hildebrand'>
+      <address>
+        <phone>303-522-1212</phone>
+        <email>joe@example.com</email>
+      </address>
+    </author>
+  </front>
+  <middle>
+    <section>
+      <t>Test</t>
+    </section>
+    <section anchor='foo1'/>
+    <section anchor='foo2' title='Foo 2'/>
+    <section title='Foo 3'/>
+    <section anchor='foo4'>
+      <name>Foo <tt>4</tt></name>
+      <section title='o'>
+        <section title='p'/>
+        <section title='p' toc='include'/>
+      </section>
+    </section>
+    <section title='not' toc='exclude'/>
+  </middle>
+</rfc>
