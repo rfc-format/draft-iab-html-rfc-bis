@@ -1,3 +1,3 @@
 See:
 
-http://ietf-formatters.github.io/draft-iab-html-rfc/
+http://rfc-format.github.io/draft-iab-html-rfc/
