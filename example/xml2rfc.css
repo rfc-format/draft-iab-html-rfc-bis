@@ -1,0 +1,531 @@
+@viewport {
+  zoom: 1.0;
+  width: extend-to-zoom;
+}
+@-ms-viewport {
+  width: extend-to-zoom;
+  zoom: 1.0;
+}
+body {
+  max-width: 724px;
+  margin: 2em auto;
+  color: #333;
+  background-color: #fff;
+  font: 15px 'Noto Sans', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.ears {
+  display: none;
+}
+
+/* headings */
+#title, h1, h2, h3, h4, h5, h6 {
+  line-height: 110%;
+  margin: 0.8em 0 0.3em;
+}
+#title {
+  font-size: 36px;
+}
+.author {
+  padding-bottom: 4px;
+}
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 20px;
+}
+h3, h4, h5, h6 {
+  font-size: 16px;
+}
+
+/* general structure */
+p {
+  padding: 0;
+  margin: 0.8em 0 0.8em 2em;
+  text-align: left;
+}
+div, span {
+  position: relative;
+}
+div {
+  margin: 0;
+}
+.alignRight.art-text {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+}
+.alignRight {
+  margin: 0.8em 0.4em 0.4em;
+}
+.alignRight > *:first-child {
+  border: none;
+  margin: 0;
+  float: right;
+  clear: both;
+}
+.alignRight > *:nth-child(2) {
+  clear: both;
+  display: block;
+  border: none;
+}
+
+svg {
+  display: block;
+}
+
+.alignCenter.art-text {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+}
+.alignCenter {
+  margin: 0.8em 0.4em 0.4em;
+}
+.alignCenter > *:first-child {
+  border: none;
+  /* this isn't optimal, but it's an existence proof.  PrinceXML doesn't
+     support flexbox yet.
+  */
+  display: table;
+  margin: 0 auto;
+}
+
+/* lists */
+ol, ul, li {
+  padding: 0;
+  margin: 0.8em 0 0.8em 2em;
+}
+li, p {
+  margin-left: 0;
+}
+ul.empty, .ulEmpty {
+  list-style-type: none;
+}
+ul.empty li, .ulEmpty li {
+  margin-top: .5em;
+}
+ul.compact, .ulCompact,
+ol.compact, .olCompact {
+  line-height: 100%;
+  margin: 0 0 0 2em;
+}
+
+/* definition lists */
+dl {
+  margin-left: 1em;
+}
+dl > dt {
+  float: left;
+  margin-right: 1em;
+}
+dl.nohang > dt {
+  float: none;
+}
+dl > dd {
+  margin-bottom: .8em;
+  min-height: 1.3em;
+}
+/* I find the dlCompact style stupid */
+dl.compact > dd, dlCompact > dd {
+  margin-bottom: 0em;
+}
+dl > dd > dl {
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+}
+
+/* links */
+a {
+  text-decoration: none;
+}
+a[href] {
+  color: #2a6496;
+}
+figcaption a[href], a[href].selfRef {
+  color: #000;
+}
+a[href]:hover {
+  background-color: #eee;
+}
+
+/* Figures */
+tt, code, pre, code {
+  background-color: #f9f9f9;
+  font: 11pt 'Droid Serif', Monaco, monospace;
+}
+pre {
+  border: 1px solid #eee;
+  padding: 5px;
+  margin: 0.8em 0.4em 0.4em;
+  line-height: 1.15em;
+}
+figure {
+  margin: 0;
+}
+figure blockquote {
+  margin: 0.8em 0.4em 0.4em;
+}
+figcaption {
+  font-style: italic;
+  margin: 0 1.5em;
+}
+@media screen {
+  pre {
+    overflow-x: auto;
+    max-width: 100%;
+    max-width: calc(100% - 22px);
+  }
+}
+
+/* aside, blockquote */
+aside, blockquote {
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 10px;
+}
+blockquote {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+cite {
+  display: block;
+  text-align: right;
+  font-style: italic;
+}
+
+/* tables */
+table {
+  margin-left: 0em;
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+td {
+  border-top: 1px solid #ddd;
+  vertical-align: top;
+}
+tr:nth-child(2n+1) > td,
+tr:nth-child(2n+1) > th {
+  background-color: #f9f9f9;
+}
+table caption {
+  font-style: italic;
+  margin: 0 1.5em;
+}
+
+/* pilcrow */
+a.pilcrow {
+  color: #777;
+  text-decoration: none;
+  visibility: hidden;
+  user-select: none;
+  -ms-user-select: none;
+  -o-user-select:none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+@media screen {
+  aside:hover > a.pilcrow,
+  p:hover > a.pilcrow,
+  blockquote:hover > a.pilcrow,
+  div:hover > a.pilcrow,
+  li:hover > a.pilcrow,
+  pre:hover > a.pilcrow {
+    visibility: visible;
+  }
+}
+
+/* misc */
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+}
+.bcp14 {
+  font-variant: small-caps;
+}
+
+.role {
+  font-variant: all-small-caps;
+}
+
+/* info block */
+#identifiers {
+  color: #555;
+  margin: 0;
+}
+#identifiers dt {
+  min-width: 6em;
+  color: #777;
+  font-weight: 700;
+}
+#identifiers dd {
+  margin-left: 7em;
+  margin-bottom: 0;
+}
+
+/* The prepared/rendered info at the very bottom of the page */
+.docInfo {
+  font-style: italic;
+  font-size: 12px;
+  color: #999;
+  margin-right: 20px;
+  float: right;
+}
+.docInfo span {
+  display: block;
+}
+
+/* table of contents */
+nav.toc ul {
+  margin: 0 0 0 1.5em;
+  padding: 0;
+  list-style: none;
+}
+nav.toc li {
+  margin: 0;
+  text-indent: -2.5em;
+  padding-left: 2.5em;
+  padding-bottom: 5px;
+}
+
+/* references */
+.reference dt {
+  text-align: right;
+  font-weight: bold;
+  min-width: 6em;
+}
+.reference dd {
+  margin-left: 7em;
+}
+
+.refInstance {
+  margin-bottom: 18px;
+}
+
+.reference .ascii {
+  margin-bottom: 6px;
+}
+
+/* index */
+.index ul {
+  margin: 0 0 0 1em;
+  padding: 0;
+  list-style: none;
+}
+.index ul ul {
+  margin: 0;
+}
+.index li {
+  margin: 0;
+  text-indent: -2em;
+  padding-left: 2em;
+  padding-bottom: 5px;
+}
+.indexIndex {
+  margin-left: 2em;
+}
+.indexIndex:before {
+  content: " ... "
+}
+.index a {
+  font-weight: 700;
+}
+
+/* authors */
+address.vcard {
+  font-style: normal;
+  margin: 1em;
+}
+
+address.vcard .nameRole {
+  font-weight: 700;
+  margin-left: 0;
+}
+address.vcard .label {
+  margin: 0 2em;
+  font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+}
+address.vcard .type {
+  display: none;
+}
+
+.alternative-contact {
+  margin: 6px 0 6px -12px;
+}
+
+hr.addr {
+  max-width: 150px;
+  border-top: solid 1px;
+  margin: 0px;
+}
+
+/* temporary notes */
+.rfcEditorRemove::before {
+  position: absolute;
+  top: 0.2em;
+  right: 0.2em;
+  padding: 0.2em;
+  content: "The RFC Editor will remove this note";
+  color: #b76427;
+  background-color: rgba(249, 232, 105, 0.3);
+}
+.rfcEditorRemove {
+  position: relative;
+  padding-top: 1.8em;
+  background-color: rgba(249, 232, 105, 0.3);
+  border-radius: 3px;
+}
+.cref {
+  background-color: rgba(249, 232, 105, 0.3);
+}
+.cref::before {
+  content: "[[ ";
+}
+.cref::after {
+  content: " ]]";
+}
+.crefSource {
+  font-style: italic;
+}
+
+/* alternative layout for wide screens */
+@media screen and (min-width: 1024px) {
+  body {
+    padding-left: 1.5em;
+    padding-right: 29em;
+  }
+
+  h2#toc, nav.toc {
+    position: fixed;
+    right: 0;
+    right: calc(50vw - 500px);
+    width: 300px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 1em;
+    z-index: 1;
+  }
+  h2#toc {
+    top: 16px;
+    height: 64px;
+  }
+  nav.toc {
+    top: 80px;
+    overflow: auto;
+    bottom: 0;
+  }
+}
+
+/* pagination */
+@media print {
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  nav#toc {
+    page-break-before: always;
+  }
+  figure, pre {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+    page-break-after: avoid;
+  }
+  h2+*, h3+*, h4+*, h5+*, h6+* {
+    page-break-before: avoid;
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 10pt;
+  }
+}
+
+.ears thead .left {
+  string-set: ears-top-left content();
+}
+
+.ears thead .center {
+  string-set: ears-top-center content();
+}
+
+.ears thead .right {
+  string-set: ears-top-right content();
+}
+
+.ears tfoot .left {
+  string-set: ears-bottom-left content();
+}
+
+.ears tfoot .center {
+  string-set: ears-bottom-center content();
+}
+
+.ears tfoot .right {
+  string-set: ears-bottom-right content();
+}
+
+@page :first {
+  padding-top: 0;
+  @top-left {
+    content: normal;
+    border: none;
+  }
+  @top-center {
+    content: normal;
+    border: none;
+  }
+  @top-right {
+    content: normal;
+    border: none;
+  }
+}
+
+@page {
+  size: A4;
+  margin-bottom: 45mm;
+  padding-top: 20px;
+  @top-left {
+    content: 'Internet-Draft';
+    vertical-align: bottom;
+    border-bottom: solid 1px #ccc;
+  }
+  @top-left {
+    content: string(ears-top-left);
+    vertical-align: bottom;
+    border-bottom: solid 1px #ccc;
+  }
+  @top-center {
+    content: string(ears-top-center);
+    vertical-align: bottom;
+    border-bottom: solid 1px #ccc;
+  }
+  @top-right {
+    content: string(ears-top-right);
+    vertical-align: bottom;
+    border-bottom: solid 1px #ccc;
+  }
+  @bottom-left {
+    content: string(ears-bottom-left);
+    vertical-align: top;
+    border-top: solid 1px #ccc;
+  }
+  @bottom-center {
+    content: string(ears-bottom-center);
+    vertical-align: top;
+    border-top: solid 1px #ccc;
+  }
+  @bottom-right {
+      content: '[Page ' counter(page) ']';
+      vertical-align: top;
+      border-top: solid 1px #ccc;
+  }
+}
