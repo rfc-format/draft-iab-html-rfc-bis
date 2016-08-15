@@ -2192,7 +2192,7 @@ Internet-Draft                  HTML RFC                       July 2016
 
    [I-D.iab-rfc-css]
               Flanagan, H., "CSS Requirements for RFCs", draft-iab-rfc-
-              css-00 (work in progress), January 2016.
+              css-01 (work in progress), July 2016.
 
    [I-D.iab-xml2rfc]
               Hoffman, P., "The "xml2rfc" version 3 Vocabulary", draft-
@@ -2230,8 +2230,8 @@ Internet-Draft                  HTML RFC                       July 2016
 
    [I-D.iab-rfcv3-preptool]
               Hoffman, P. and J. Hildebrand, "RFC v3 Prep Tool
-              Description", draft-iab-rfcv3-preptool-01 (work in
-              progress), February 2016.
+              Description", draft-iab-rfcv3-preptool-02 (work in
+              progress), June 2016.
 
 
 
