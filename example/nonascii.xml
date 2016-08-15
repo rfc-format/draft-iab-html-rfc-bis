@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<rfc>
+  <front>
+    <title>None</title>
+    <author fullname='José Hildebrand' asciiFullname='Joe Hildebrand' role='editor'/>
+  </front>
+  <middle>
+    <section>
+      <name>First</name>
+      <t>Test</t>
+    </section>
+  </middle>
+</rfc>

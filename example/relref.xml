@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rfc ipr='trust200902' xmlns:xi='http://www.w3.org/2001/XInclude'>
+  <front>
+    <title>test</title>
+    <author/>
+  </front>
+  <middle>
+    <section>
+      <name>None</name>
+      <dl>
+        <dt>of</dt>
+        <dd><relref target='RFC5731' section='4'/>,
+            <relref target='RFC5732' section='4' displayFormat='of'/>
+        </dd>
+        <dt>comma</dt>
+        <dd><relref target='RFC5731' section='4' displayFormat='comma'/>,
+            <relref target='RFC5732' section='4' displayFormat='comma'/>
+        </dd>
+        <dt>parens</dt>
+        <dd><relref target='RFC5731' section='4' displayFormat='parens'/>,
+            <relref target='RFC5732' section='4' displayFormat='parens'/>
+        </dd>
+        <dt>bare</dt>
+        <dd><relref target='RFC5731' section='4' displayFormat='bare'/>,
+            <relref target='RFC5732' section='4' displayFormat='bare'/>
+        </dd>
+      </dl>
+    </section>
+  </middle>
+  <back>
+    <displayreference target="RFC5731" to="EPP"/>
+    <references>
+      <name>Informational</name>
+      <xi:include href='localhost/reference.RFC.5731.xml'/>
+      <xi:include href='localhost/reference.RFC.5732.xml'/>
+    </references>
+  </back>
+</rfc>

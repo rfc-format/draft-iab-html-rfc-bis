@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<rfc>
+  <front>
+    <title>Author</title>
+    <author asciiFullname='HILDEBRAND' fullname='Hildebrand' role='editor'>
+      <organization ascii='TEST ORG' abbrev='torg'>Test Org</organization>
+      <address>
+        <postal>
+          <street>Street St.</street>
+          <city>Aurora</city>
+          <city ascii='Denver'>ǲenver</city>
+          <region>CO</region>
+          <code>80202</code>
+          <country>US</country>
+          <country>YALL</country>
+        </postal>
+        <phone>303-522-1212</phone>
+        <email>joe@example.com</email>
+      </address>
+    </author>
+    <author surname='Flanagan' initials='H.' role='editor'>
+      <organization>Test Org</organization>
+    </author>
+  </front>
+  <middle>
+    <section>
+      <t>Test</t>
+    </section>
+  </middle>
+</rfc>
