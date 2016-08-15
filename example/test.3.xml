@@ -1,0 +1,533 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?rfc toc="yes"?> <!-- PI gets removed.  This comment doesn't. -->
+<!DOCTYPE rfc SYSTEM "../rfc2629.dtd">
+<rfc ipr='trust200902'
+  xmlns:xi='http://www.w3.org/2001/XInclude' tocInclude='true' sortRefs='true'
+  updates='6949, 5646'>
+  <link href="https://github.com/hildjj/draft-hildebrand-html-rfc.git" rel="alternate"/>
+  <!-- Need right-to-left names -->
+  <front>
+    <!--
+      comment in the front
+      it's got multiple lines and some <>
+      it also has some &amp; &lt; &gt;
+    -->
+    <title abbrev='HTML RFC'>HyperText Markup Language Request For Comments Format</title>
+    <author role='editor'
+      initials='ɟ.' surname='H̭ildebrand' fullname='ɟöe H̭ildebrand'
+      asciiInitials='J.' asciiSurname='Hildebrand' asciiFullname='Joe Hildebrand'>
+      <organization ascii='Cisco Systems, Inc.' abbrev='CSI'>Čisco Śystems, Inc.</organization>
+      <address>
+        <postal>
+          <street>1 Main Street</street>
+          <street>Suite 1</street>
+          <city ascii='Denver'>ǲenver</city>
+          <region>CO</region>
+          <code ascii="80202">８０２０２</code>
+          <country ascii="US">US</country>
+        </postal>
+        <phone>+1-720-555-1212</phone>
+        <facsimile>+1-303-555-1212</facsimile>
+        <email ascii="jhildebr@example.com">ɟhildebr@éxample.com</email>
+        <uri>http://www.example.com</uri>
+      </address>
+    </author>
+    <author initials='H.' surname='Flanagan' asciiFullname='Heather Flanagan' fullname='Heather Flanagan' role='editor'>
+      <organization>RFC Editor</organization>
+      <address>
+        <postal>
+          <postalLine>Where the</postalLine>
+          <postalLine>Streets have no name</postalLine>
+        </postal>
+        <email>rse@rfc-editor.org</email>
+      </address>
+    </author>
+    <date/>
+    <area>gen</area>
+    <workgroup>RFC-Interest Pseudo Working Group</workgroup>
+    <keyword>html</keyword>
+    <keyword>css</keyword>
+    <keyword>rfc</keyword>
+    <abstract>
+      <t>This document defines the HTML format that will be rendered from the
+        canonical XML format for an RFC.  The HTML output will include a default
+        CSS to enable page layout.</t>
+      <t>Abstracts can have multiple &lt;t&gt;'s</t>
+      <ul>
+        <li>And</li>
+        <li>Lists</li>
+      </ul>
+    </abstract>
+    <note removeInRFC='true'>
+      <name>Editorial Note</name>
+      <t>
+        Discussion of this draft takes place on the rfc-interest
+        mailing list (rfc-interest@rfc-editor.org), which has its home page at
+        <eref target="https://www.rfc-editor.org/mailman/listinfo/rfc-interest"/>.
+      </t>
+    </note>
+    <note removeInRFC='true'>
+      <name>Editorial Note</name>
+      <dl>
+        <dt>A term</dt>
+        <dd>A def</dd>
+      </dl>
+    </note>
+    <boilerplate>
+      <section><t>foo</t></section>
+    </boilerplate>
+  </front>
+  <middle>
+    <section anchor='intro'>
+      <name>Introduction</name>
+      <t><iref item="Paragraphs" subitem="first" primary="true"/>Paragraph</t>
+      <section>
+        <name>Sub Section About <tt>Monospace Fonts</tt></name>
+        <t><iref item="Paragraphs" subitem="second"/>sub section paragraph</t>
+        <section anchor='sub-sub'>
+          <name>Sub-sub Section</name>
+          <t>sub section paragraph</t>
+          <section anchor='sub-sub-sub'>
+            <name>Sub-sub-sub Section</name>
+            <t>sub section paragraph</t>
+          </section>
+          <section>
+            <name>Sub-sub-sub Section 2</name>
+            <t>sub section paragraph</t>
+            <t>moar paragraph</t>
+          </section>
+        </section>
+      </section>
+      <section anchor='sub3'>
+        <name>Sub Section 3</name>
+        <blockquote
+          cite='http://www.abrahamlincolnonline.org/lincoln/speeches/gettysburg.htm'
+          quotedFrom='Abraham Lincoln'>
+          <t keepWithNext="true"><em>Four</em> <strong>score</strong> and <sup><em>seven</em></sup> <sub>years</sub>
+            ago, <tt>our</tt> fathers brought forth on this
+            continent, a new nation, conceived in Liberty, and dedicated to the
+            proposition that all men are created equal.</t>
+
+          <t>Now we are engaged in a great civil war, testing whether that nation,
+             or any nation so conceived and so dedicated, can long endure. We are
+             met on a great battle-field of that war. We have come to dedicate a
+             portion of that field, as a final resting place for those who here
+             gave their lives that that nation might live. It is altogether
+             fitting and proper that we <bcp14>SHOULD</bcp14> do this.</t>
+        </blockquote>
+        <blockquote>
+          This is a shorter blockquote example
+        </blockquote>
+
+        <t>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
+        quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+        eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+        voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam
+        corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+        quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
+        voluptas nulla pariatur?</t>
+
+        <aside>
+          <t>This is a longer aside. This paragraph has a comment.
+           <cref anchor="crefAnchor" source="life">Just a brief comment about
+          something that we need to remember later.</cref></t>
+          <ul>
+            <li>This is a short list...</li>
+            <li>...that is inside the aside.</li>
+           </ul>
+        </aside>
+      </section>
+      <section anchor='sub4'>
+        <name>Sub Section 4</name>
+        <t>sub section paragraph 4</t>
+        <t>This paragraph has a
+          <cref anchor='unint' source='Paul'>uninteresting <tt>commentary</tt>
+            <em>em</em>
+            <eref target='https://ietf.org/'>IETF eref</eref>
+            <strong>strong</strong> <sub>sub</sub> <sup>'sup</sup>
+            <tt>tt</tt>
+            <xref target="top"/>
+          </cref>.</t>
+      </section>
+    </section>
+    <section anchor='top'>
+      <name><tt>top</tt></name>
+      <t anchor='real'>A real section, with an anchor</t>
+      <table anchor='THE-TABLE'>
+        <name>I AM THE TABLE</name>
+        <iref item="Coffee tables"/>
+        <thead>
+          <tr>
+            <th>H1</th>
+            <th>H2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><t>One is the loneliest number that you'll ever do</t></td><td>Two can be as bad as one</td></tr>
+          <tr><td>It's the loneliest number</td><td>since the number one.<br/>
+          Remember to do <xref target="crefAnchor">that comment</xref>.</td></tr>
+          <tr><td><sourcecode>three(p)</sourcecode></td>
+          <td><t>4</t><t>5</t></td></tr>
+          <tr><td colspan='2' align='center'><t>This one covers two whole columns.</t></td></tr>
+          <tr><td rowspan='2' align='center'><t>This one covers two whole rows.</t></td><td>Another thing</td></tr>
+          <tr>
+            <td><iref item="Coffee tables"/>And another thing!</td>
+          </tr>
+        </tbody>
+      </table>
+      <t>Second paragraph</t>
+      <ul>
+        <li>List</li>
+        <li><tt>&lt;xref&gt;</tt> with text <xref target='unint'>Some Text</xref></li>
+        <li><tt>&lt;relref&gt;</tt> with text <relref target="RFC5646" section="1">requirements</relref></li>
+        <li>
+          <t>Multiple</t>
+          <t>Paragraphs</t>
+        </li>
+        <li>
+          <t>Section</t>
+          <ul>
+            <li>no format: <xref target='top'/></li>
+            <li>format=counter: <xref format='counter' target='top'/></li>
+            <li>format=title: <xref format='title' target='top'/></li>
+          </ul>
+        </li>
+        <li>
+          <t>Figure</t>
+            <ul>
+              <li>no format: <xref target='hello'/></li>
+              <li>format=counter: <xref format='counter' target='hello'/></li>
+              <li>format=title: <xref format='title' target='hello'/></li>
+            </ul>
+        </li>
+        <li>
+          <t>Table</t>
+          <ul>
+            <li>no format: <xref target='THE-TABLE'/></li>
+            <li>format=counter: <xref format='counter' target='THE-TABLE'/></li>
+            <li>format=title: <xref format='title' target='THE-TABLE'/></li>
+          </ul>
+        </li>
+        <li>
+          <t>Reference</t>
+          <ul>
+            <li>no format: <xref target='RFC6949'/></li>
+            <li>format=title: <xref format='title' target='RFC6949'/></li>
+            <li>displayreference: <xref target='RFC5646'/></li>
+          </ul>
+        </li>
+        <li>
+          <t>ReferenceGroup</t>
+          <ul>
+            <li>no format: <xref target='Bibble'/></li>
+            <li>format=title: <xref format='title' target='Bibble'/></li>
+            <li>displayreference: <xref target='STD69'/></li>
+          </ul>
+        </li>
+      </ul>
+      <ul empty='true'>
+        <li><iref item="Bullets" primary="true"/>Empty: it's all empty</li>
+        <li><iref item="Bullets"/>I have not bullets left</li>
+      </ul>
+      <ol>
+        <li><t>now</t><t>then</t></li>
+        <li><iref item="Bullets" subitem="Ordered"/>ordered</li>
+        <li><ol>
+          <li>before</li>
+          <li anchor="nested-li">A nested li</li>
+          <li>And a reference to <xref format="counter" target="nested-li"/></li>
+        </ol></li>
+      </ol>
+      <ol start="12" type='I' group="green">
+        <li>A dozen or so.</li>
+        <li>Now, with bakers. It's all about <xref target="Bibble"/>.</li>
+      </ol>
+      <ol group='green' type='I'>
+        <li>after bakers, before meanings</li>
+        <li>there are meaningless bakers</li>
+      </ol>
+      <ol group='green' type='I'>
+        <li>who bake</li>
+        <li>bread with meaning</li>
+      </ol>
+      <ol start="42" type='I' group="green">
+        <li>The meaning of life.</li>
+        <li>The after-meaning of the after-life</li>
+      </ol>
+      <ol type='Requirement %c:'>
+        <li>Get up every morning with a smile on your face</li>
+        <li>Show the world all the love in your heart</li>
+      </ol>
+      <ol type='Requirement %C:' start='26'>
+        <li>Upper case</li>
+        <li>Above 26</li>
+      </ol>
+      <ol type='Requirement %i:' start='18'>
+        <li>Wheels on a big rig</li>
+        <li>Exercitation nisi quis in laborum ipsum esse excepteur culpa.
+        Et pariatur anim labore pariatur qui
+        adipisicing consequat quis. Occaecat fugiat ad mollit ipsum occaecat
+        aliqua consectetur. Esse proident qui amet quis dolore consectetur
+        proident sunt ipsum exercitation veniam exercitation amet. Nostrud
+        exercitation magna officia incididunt deserunt incididunt eiusmod veniam
+        esse minim non. Mollit non ad consectetur adipisicing nisi ex consequat
+        qui proident officia laboris duis adipisicing. Velit commodo aliqua
+        occaecat consequat nostrud anim ad ut. Quis aute eu culpa dolore ut esse
+        ea est elit occaecat. In cupidatat ea ipsum est fugiat ad pariatur
+        nulla. </li>
+      </ol>
+      <t>This should be centered:</t>
+      <artwork anchor='not-actually-ee' xml:lang='en' type='poetry' align='center'>
+artwork does not
+     ALWAYS
+   have to be part of a figure.
+                            --0xEE cummings</artwork>
+      <artwork align='center' type='ascii-art'>
+some
+texting goes
+here</artwork>
+      <t>This should be pushed right:</t>
+      <artwork align='right'>Just a step to the right</artwork>
+      <figure>
+        <name>It figures</name>
+        <artwork type='ascii-art'>
+ <![CDATA[
+ ______________
+< hello, world >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+]]>
+        </artwork>
+      </figure>
+      <figure><name>Inline with &lt;svg&gt; element</name>
+        <artwork type="svg" alt="green stroke yellow fill circle">
+          <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="white" />
+          </svg>
+        </artwork>
+      </figure>
+      <figure><name>Inline with XInclude (right)</name>
+        <artwork type="svg" align="right"><xi:include href='http://localhost:7749/redbluecircle.svg'/></artwork>
+      </figure>
+      <figure><name>SVG as a data: URI</name>
+        <artwork type="svg" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEwMCIKICAgICB3aWR0aD0iMTAwIgogICAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGNpcmNsZSBjeD0iNTAiCiAgICAgICAgICBjeT0iNTAiCiAgICAgICAgICBmaWxsPSJ3aGl0ZSIKICAgICAgICAgIHI9IjQwIgogICAgICAgICAgc3Ryb2tlPSJibGFjayIKICAgICAgICAgIHN0cm9rZS13aWR0aD0iNCIvPgo8L3N2Zz4="/>
+      </figure>
+      <figure><name>Inline with &lt;src&gt; attribute (center)</name>
+        <artwork align="center" type="svg" src='http://localhost:7749/redbluecircle.svg' anchor='externalCircle'/>
+      </figure>
+      <figure><name>Inline with local &lt;src&gt; attribute</name>
+        <artwork type="svg" src="localhost/redbluecircle.svg"/>
+      </figure>
+      <t>Artwork can also be outside a figure. Here are two.</t>
+      <artwork type="binary-art" src="http://localhost:7749/ietflogotrans.gif" alt="IETF logo"/>
+      <artwork type="hex-dump" src="localhost/cow.dump"/>
+      <section>
+        <name>foo</name>
+        <t><iref item="Paragraphs" subitem="first"/>another</t>
+        <aside><t>If this was an interesting section, it would have more
+          interesting things to say</t></aside>
+        <dl>
+          <dt>Fine</dt>
+          <dd>Not fine</dd>
+          <dt>Angry</dt>
+          <dd>Sad<sub><strong>weepy</strong></sub></dd>
+        </dl>
+        <dl hanging='true' spacing='compact'>
+          <dt>Whee!</dt>
+          <dd>Ugh. <em>Really</em> ugh.</dd>
+          <dt anchor="whoa"><tt>Woah!</tt></dt>
+          <dd><t>What<em>ever</em>. I guess I should have an ordered list here:</t>
+             <ol>
+               <li>Won!</li>
+               <li>Too!</li>
+             </ol>
+          </dd>
+        </dl>
+        <figure anchor="hello">
+          <name>This is a figure</name>
+          <sourcecode anchor='helloworld' type='c'>
+<![CDATA[
+#include <stdio.h>
+
+int main(void)
+{
+    printf("hello, world\n");
+    return 0;
+}]]></sourcecode>
+        </figure>
+      </section>
+      <!-- TODO: Fix the inline sourcecode -->
+      <section>
+        <name>YANG ABNF</name>
+        <t>This is an example of a single ABNF file split across several
+          inline blocks.  It should be recoverable with
+          <tt>xmllint --xpath '//sourcecode[@name="yang.abnf"]/text()' test.x.xml</tt>.</t>
+        <sourcecode type='abnf' name='yang.abnf'><![CDATA[
+module-stmt         = optsep module-keyword sep identifier-arg-str
+                     optsep
+                     "{" stmtsep
+                         module-header-stmts
+                         linkage-stmts
+                         meta-stmts
+                         revision-stmts
+                         body-stmts
+                     "}" optsep]]></sourcecode>
+        <t>Some text</t>
+        <sourcecode type='abnf' name='yang.abnf'><![CDATA[
+submodule-stmt      = optsep submodule-keyword sep identifier-arg-str]]></sourcecode>
+<t>Some text</t>
+<sourcecode type='abnf' name='yang.abnf'><![CDATA[
+                     optsep
+                     "{" stmtsep
+                         submodule-header-stmts
+                         linkage-stmts
+                         meta-stmts
+                         revision-stmts
+                         body-stmts
+                     "}" optsep]]></sourcecode>
+        <t>Some text</t>
+        <sourcecode type='abnf' name='yang.abnf'><![CDATA[
+module-header-stmts = ;; these stmts can appear in any order
+                     [yang-version-stmt stmtsep]
+                      namespace-stmt stmtsep
+                      prefix-stmt stmtsep]]></sourcecode>
+         <t>Some text</t>
+         <sourcecode type='abnf' name='yang.abnf'><![CDATA[
+submodule-header-stmts =
+                     ;; these stmts can appear in any order
+                     [yang-version-stmt stmtsep]
+                      belongs-to-stmt stmtsep]]></sourcecode>
+         <t>Some text</t>
+         <sourcecode type='abnf' name='yang.abnf'><![CDATA[
+meta-stmts          = ;; these stmts can appear in any order
+                     [organization-stmt stmtsep]
+                     [contact-stmt stmtsep]
+                     [description-stmt stmtsep]
+                     [reference-stmt stmtsep]
+                     "}"]]></sourcecode>
+
+      </section>
+      <section>
+        <name>Python</name>
+        <t>Trying some Python code</t>
+        <sourcecode type="python" name="paul.py"><![CDATA[
+def foo():]]></sourcecode>
+        <sourcecode type="python" name="paul.py"><![CDATA[
+  print("hello, world!")]]></sourcecode>
+      </section>
+      <section>
+        <name>Long lines</name>
+        <sourcecode type="gibberish">
+This is gibberish: aklsdjalskjd aslkdj asldkj aslkdja sldkjasdklajd alkdjasdlkj dalkjd lajks dlkasjdaskjd asdlkjasd lkjds</sourcecode>
+      </section>
+      <section>
+        <name>With src</name>
+        <sourcecode src='package.json'/>
+        <t>Some docs might talk about svg, and need examples thereof:</t>
+        <sourcecode src='localhost/redbluecircle.svg' type='svg'/>
+      </section>
+    </section>
+    <section>
+      <name>IANA Considerations</name>
+      <t>None</t>
+    </section>
+  </middle>
+  <back>
+    <displayreference target="STD69" to="EPP"/>
+    <displayreference target="RFC5646" to="LANG-TAGS"/>
+    <references anchor='norm'>
+      <name>Normative References</name>
+      <xi:include href='localhost/reference.RFC.2119.xml'/>
+      <reference anchor="GOST3410" target='http://example.com/GOST34.10'>
+        <front>
+          <title ascii='Information technology. Cryptographic data security. Signature and verification processes of [electronic] digital signature'>
+            Информационная технология. Криптографическая защита информации. Процессы формирования и проверки электронной цифровой подписи
+          </title>
+          <author>
+            <organization ascii='Federal Agency on Technical Regulating and Metrology'>
+              Государственный стандарт Российской Федерации
+            </organization>
+          </author>
+          <date year="2012"/>
+        </front>
+        <annotation>(In Russian)</annotation>
+        <seriesInfo name="GOST R" value="34.10-2012"/>
+      </reference>
+    </references>
+    <references>
+      <name>Informative References</name>
+      <xi:include href='localhost/reference.RFC.6949.xml'/>
+      <reference anchor="RFC5646" target="http://www.rfc-editor.org/info/rfc5646">
+        <front>
+          <title>Tags for Identifying Languages</title>
+          <author initials="A." surname="Phillips" fullname="A. Phillips"/>
+          <author initials="M." surname="Davis" fullname="M. Davis"/>
+          <date year="2009" month="September"/>
+          <abstract>
+            <t>This document describes the structure, content, construction, and
+              semantics of language tags for use in cases where it is desirable
+              to indicate the language used in an information object.  It also
+              describes how to register values for use in language tags and the
+              creation of user-defined extensions for private interchange.  This
+              document specifies an Internet Best Current Practices for the
+              Internet Community, and requests discussion and suggestions for
+              improvements.</t>
+          </abstract>
+        </front>
+        <seriesInfo name="BCP" value="47"/>
+        <seriesInfo name="RFC" value="5646"/>
+        <format type="TXT" octets="208592" target="http://www.rfc-editor.org/rfc/rfc5646.txt"/>
+      </reference>
+      <referencegroup anchor="STD69">
+        <xi:include href='localhost/reference.RFC.5734.xml'/>
+        <xi:include href='localhost/reference.RFC.5730.xml'/>
+        <xi:include href='localhost/reference.RFC.5731.xml'/>
+        <xi:include href='localhost/reference.RFC.5732.xml'/>
+        <xi:include href='localhost/reference.RFC.5733.xml'/>
+      </referencegroup>
+      <referencegroup anchor="Bibble">
+        <reference anchor="Bibble3" quoteTitle="false" target="http://example.com/bibble3">
+          <front>
+            <title>Bibble protocol spec</title>
+            <author initials="N." surname="One" fullname="No One"/>
+            <date year="1850"/>
+          </front>
+        <seriesInfo name="BibbleSpècs" asciiName= "BibbleSpecs" value="12-4444"/>
+        </reference>
+        <reference anchor="Bibble2">
+          <front>
+            <title ascii="Bibble use cases">Bi̬bble use cases</title>
+            <author initials="Ñ." asciiInitials="N." surname="One" fullname="Ño One" asciiFullname="No One"/>
+            <author initials="Ñ." asciiInitials="N." surname="Two" fullname="Ño Two" asciiFullname="No Two"/>
+            <author initials="Ñ." asciiInitials="N." surname="Three" fullname="Ño Three" asciiFullname="No Three"/>
+          </front>
+        <seriesInfo name="BibbleSpècs" asciiName= "BibbleSpecs" value="12-4479"/>
+        <seriesInfo name="DOI" value="10.17487/RFC2119"/>
+        </reference>
+      </referencegroup>
+    </references>
+    <section>
+      <name slugifiedName='doing'>Doing things in appendices</name>
+      <t>This is where you would put an appendix</t>
+      <section>
+        <name>Sub-appendix</name>
+        <t>Have parts, too</t>
+        <t>And more parts</t>
+      </section>
+    </section>
+    <section title='Another appendix'>
+      <t>This one is just as useless, but started with a title attribute</t>
+    </section>
+  </back>
+</rfc>
+<!-- ideally this comment stays in I-D mode -->

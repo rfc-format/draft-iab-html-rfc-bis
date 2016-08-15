@@ -1,0 +1,1009 @@
+<?xml version="1.0"?>
+<!-- PI gets removed.  This comment doesn't. -->
+<rfc consensus="false"
+     expiresDate="2017-01-27"
+     indexInclude="true"
+     ipr="trust200902"
+     prepTime="2016-07-27T21:15:29.775Z"
+     scripts="Common,Cyrillic,Inherited,Latin"
+     sortRefs="true"
+     submissionType="IETF"
+     symRefs="true"
+     tocDepth="3"
+     tocInclude="true"
+     updates="6949, 5646"
+     version="3"
+     xmlns:xi="http://www.w3.org/2001/XInclude">
+  <link href="https://github.com/hildjj/draft-hildebrand-html-rfc.git"
+        rel="alternate"/>
+  <!-- Need right-to-left names -->
+  <front>
+    <!-- comment in the front
+      it's got multiple lines and some <>
+      it also has some &amp; &lt; &gt; -->
+    <title abbrev="HTML RFC">
+      HyperText Markup Language Request For Comments Format
+    </title>
+    <author asciiFullname="Joe Hildebrand"
+            asciiInitials="J."
+            asciiSurname="Hildebrand"
+            fullname="ɟöe H̭ildebrand"
+            initials="ɟ."
+            role="editor"
+            surname="H̭ildebrand">
+      <organization abbrev="CSI" ascii="Cisco Systems, Inc.">
+        Čisco Śystems, Inc.
+      </organization>
+      <address>
+        <postal>
+          <street>1 Main Street</street>
+          <street>Suite 1</street>
+          <city ascii="Denver">ǲenver</city>
+          <region>CO</region>
+          <code ascii="80202">８０２０２</code>
+          <country>US</country>
+        </postal>
+        <phone>+1-720-555-1212</phone>
+        <facsimile>+1-303-555-1212</facsimile>
+        <email ascii="jhildebr@example.com">
+          ɟhildebr@éxample.com
+        </email>
+        <uri>http://www.example.com</uri>
+      </address>
+    </author>
+    <author fullname="Heather Flanagan"
+            initials="H."
+            role="editor"
+            surname="Flanagan">
+      <organization>RFC Editor</organization>
+      <address>
+        <postal>
+          <postalLine>Where the</postalLine>
+          <postalLine>Streets have no name</postalLine>
+        </postal>
+        <email>rse@rfc-editor.org</email>
+      </address>
+    </author>
+    <date day="27" month="7" year="2016"/>
+    <area>gen</area>
+    <workgroup>RFC-Interest Pseudo Working Group</workgroup>
+    <keyword>html</keyword>
+    <keyword>css</keyword>
+    <keyword>rfc</keyword>
+    <abstract pn="s-abstract">
+      <t pn="s-abstract-1">
+        This document defines the HTML format that will be rendered
+        from the canonical XML format for an RFC.  The HTML output
+        will include a default CSS to enable page layout.
+      </t>
+      <t pn="s-abstract-2">Abstracts can have multiple &lt;t&gt;'s</t>
+      <ul empty="false" pn="s-abstract-3" spacing="normal">
+        <li pn="s-abstract-3.1">And</li>
+        <li pn="s-abstract-3.2">Lists</li>
+      </ul>
+    </abstract>
+    <note pn="s-note-1" removeInRFC="true">
+      <t pn="s-note-1.1">
+        This note is to be removed before publishing as an RFC.
+      </t>
+      <name slugifiedName="n-editorial-note">Editorial Note</name>
+      <t pn="s-note-1.2">Discussion of this draft takes place on the rfc-interest mailing list (rfc-interest@rfc-editor.org), which has its home page at <eref target="https://www.rfc-editor.org/mailman/listinfo/rfc-interest"/>.</t>
+    </note>
+    <note pn="s-note-2" removeInRFC="true">
+      <t pn="s-note-2.1">
+        This note is to be removed before publishing as an RFC.
+      </t>
+      <name slugifiedName="n-editorial-note">Editorial Note</name>
+      <dl hanging="true" pn="s-note-2.2" spacing="normal">
+        <dt pn="s-note-2.2.1">A term</dt>
+        <dd pn="s-note-2.2.2">A def</dd>
+      </dl>
+    </note>
+    <boilerplate>
+      <section numbered="false" pn="s-boilerplate-1">
+        <name slugifiedName="n-status-of-this-memo">
+          Status of this Memo
+        </name>
+        <t pn="s-boilerplate-1-1">
+          This Internet-Draft is submitted in full conformance with
+          the provisions of BCP 78 and BCP 79.
+        </t>
+        <t pn="s-boilerplate-1-2">Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at <eref target="http://datatracker.ietf.org/drafts/current/"/>.</t>
+        <t pn="s-boilerplate-1-3">
+          Internet-Drafts are draft documents valid for a maximum of
+          six months and may be updated, replaced, or obsoleted by
+          other documents at any time.  It is inappropriate to use
+          Internet-Drafts as reference material or to cite them other
+          than as "work in progress."
+        </t>
+        <t pn="s-boilerplate-1-4">
+          This Internet-Draft will expire on 2017-01-27.
+        </t>
+      </section>
+      <section numbered="false" pn="s-boilerplate-2">
+        <name slugifiedName="n-copyright-notice">
+          Copyright Notice
+        </name>
+        <t pn="s-boilerplate-2-1">
+          Copyright ©2016 IETF Trust and the persons identified as the
+          document authors.  All rights reserved.
+        </t>
+        <t pn="s-boilerplate-2-2">This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to <eref target="http://trustee.ietf.org/license-info">IETF Documents</eref>
+in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</t>
+      </section>
+    </boilerplate>
+    <seriesInfo name="Internet-Draft" value="test.3"/>
+  </front>
+  <middle>
+    <section anchor="intro" pn="s-1" toc="include">
+      <name slugifiedName="n-introduction">Introduction</name>
+      <t pn="s-1-1"><iref item="Paragraphs" pn="i-Paragraphs-first-1" primary="true" subitem="first"/>Paragraph</t>
+      <section pn="s-1.1" toc="include">
+        <name slugifiedName="n-sub-section-about-monospace-fonts">Sub Section About <tt>Monospace Fonts</tt></name>
+        <t pn="s-1.1-1"><iref item="Paragraphs" pn="i-Paragraphs-second-1" primary="false" subitem="second"/>sub section paragraph</t>
+        <section anchor="sub-sub" pn="s-1.1.1" toc="include">
+          <name slugifiedName="n-sub-sub-section">
+            Sub-sub Section
+          </name>
+          <t pn="s-1.1.1-1">sub section paragraph</t>
+          <section anchor="sub-sub-sub" pn="s-1.1.1.1" toc="exclude">
+            <name slugifiedName="n-sub-sub-sub-section">
+              Sub-sub-sub Section
+            </name>
+            <t pn="s-1.1.1.1-1">sub section paragraph</t>
+          </section>
+          <section pn="s-1.1.1.2" toc="exclude">
+            <name slugifiedName="n-sub-sub-sub-section-2">
+              Sub-sub-sub Section 2
+            </name>
+            <t pn="s-1.1.1.2-1">sub section paragraph</t>
+            <t pn="s-1.1.1.2-2">moar paragraph</t>
+          </section>
+        </section>
+      </section>
+      <section anchor="sub3" pn="s-1.2" toc="include">
+        <name slugifiedName="n-sub-section-3">Sub Section 3</name>
+        <blockquote cite="http://www.abrahamlincolnonline.org/lincoln/speeches/gettysburg.htm"
+                    pn="s-1.2-1"
+                    quotedFrom="Abraham Lincoln">
+          <t keepWithNext="true" pn="s-1.2-1.1"><em>Four</em><strong>score</strong> and <sup><em>seven</em></sup><sub>years</sub>
+ ago, <tt>our</tt> fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.</t>
+          <t pn="s-1.2-1.2">Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we <bcp14>SHOULD</bcp14> do this.</t>
+        </blockquote>
+        <blockquote pn="s-1.2-2">
+          This is a shorter blockquote example
+        </blockquote>
+        <t pn="s-1.2-3">
+          Sed ut perspiciatis unde omnis iste natus error sit
+          voluptatem accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et
+          quasi architecto beatae vitae dicta sunt explicabo. Nemo
+          enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+          aut fugit, sed quia consequuntur magni dolores eos qui
+          ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+          qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+          velit, sed quia non numquam eius modi tempora incidunt ut
+          labore et dolore magnam aliquam quaerat voluptatem. Ut enim
+          ad minima veniam, quis nostrum exercitationem ullam corporis
+          suscipit laboriosam, nisi ut aliquid ex ea commodi
+          consequatur? Quis autem vel eum iure reprehenderit qui in ea
+          voluptate velit esse quam nihil molestiae consequatur, vel
+          illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+        </t>
+        <aside pn="s-1.2-4">
+          <t pn="s-1.2-4.1">This is a longer aside. This paragraph has a comment.   <cref anchor="crefAnchor" display="true" source="life">Just a brief comment about something that we need to remember later.</cref></t>
+          <ul empty="false" pn="s-1.2-4.2" spacing="normal">
+            <li pn="s-1.2-4.2.1">This is a short list...</li>
+            <li pn="s-1.2-4.2.2">...that is inside the aside.</li>
+          </ul>
+        </aside>
+      </section>
+      <section anchor="sub4" pn="s-1.3" toc="include">
+        <name slugifiedName="n-sub-section-4">Sub Section 4</name>
+        <t pn="s-1.3-1">sub section paragraph 4</t>
+        <t pn="s-1.3-2">This paragraph has a <cref anchor="unint" display="true" source="Paul">uninteresting <tt>commentary</tt><em>em</em><eref target="https://ietf.org/">IETF eref</eref><strong>strong</strong><sub>sub</sub><sup>'sup</sup><tt>tt</tt><xref derivedContent="Section 2" format="default" target="top"/></cref>.</t>
+      </section>
+    </section>
+    <section anchor="top" pn="s-2" toc="include">
+      <name slugifiedName="n-top">
+        <tt>top</tt>
+      </name>
+      <t anchor="real" pn="s-2-1">A real section, with an anchor</t>
+      <table anchor="THE-TABLE" pn="t-1">
+        <name slugifiedName="n-i-am-the-table">I AM THE TABLE</name>
+        <iref item="Coffee tables"
+              pn="i-Coffee-tables-1"
+              primary="false"/>
+        <thead>
+          <tr border="0">
+            <th align="left" border="0">H1</th>
+            <th align="left" border="0">H2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr border="0">
+            <td align="left" border="0">
+              <t pn="t-1-1">
+                One is the loneliest number that you'll ever do
+              </t>
+            </td>
+            <td align="left" border="0">Two can be as bad as one</td>
+          </tr>
+          <tr border="0">
+            <td align="left" border="0">It's the loneliest number</td>
+            <td align="left" border="0">since the number one.<br/>
+ Remember to do <xref derivedContent="that comment" format="default" target="crefAnchor">that comment</xref>.</td>
+          </tr>
+          <tr border="0">
+            <td align="left" border="0">
+              <sourcecode pn="t-1-1">three(p)</sourcecode>
+            </td>
+            <td align="left" border="0">
+              <t pn="t-1-1">4</t>
+              <t pn="t-1-2">5</t>
+            </td>
+          </tr>
+          <tr border="0">
+            <td align="center" border="0" colspan="2">
+              <t pn="t-1-1">This one covers two whole columns.</t>
+            </td>
+          </tr>
+          <tr border="0">
+            <td align="center" border="0" rowspan="2">
+              <t pn="t-1-1">This one covers two whole rows.</t>
+            </td>
+            <td align="left" border="0">Another thing</td>
+          </tr>
+          <tr border="0">
+            <td align="left" border="0"><iref item="Coffee tables" pn="i-Coffee-tables-2" primary="false"/>And another thing!</td>
+          </tr>
+        </tbody>
+      </table>
+      <t pn="t-2">Second paragraph</t>
+      <ul empty="false" pn="t-3" spacing="normal">
+        <li pn="t-3.1">List</li>
+        <li pn="t-3.2"><tt>&lt;xref&gt;</tt> with text <xref derivedContent="Some Text" format="default" target="unint">Some Text</xref></li>
+        <li pn="t-3.3"><tt>&lt;relref&gt;</tt> with text <relref derivedLink="https://tools.ietf.org/html/rfc5646#section-1" displayFormat="of" section="1" target="RFC5646">requirements</relref></li>
+        <li pn="t-3.4">
+          <t pn="t-3.4.1">Multiple</t>
+          <t pn="t-3.4.2">Paragraphs</t>
+        </li>
+        <li pn="t-3.5">
+          <t pn="t-3.5.1">Section</t>
+          <ul empty="false" pn="t-3.5.2" spacing="normal">
+            <li pn="t-3.5.2.1">no format: <xref derivedContent="Section 2" format="default" target="top"/></li>
+            <li pn="t-3.5.2.2">format=counter: <xref derivedContent="2" format="counter" target="top"/></li>
+            <li pn="t-3.5.2.3">format=title: <xref derivedContent="top" format="title" target="top"/></li>
+          </ul>
+        </li>
+        <li pn="t-3.6">
+          <t pn="t-3.6.1">Figure</t>
+          <ul empty="false" pn="t-3.6.2" spacing="normal">
+            <li pn="t-3.6.2.1">no format: <xref derivedContent="Figure 7" format="default" target="hello"/></li>
+            <li pn="t-3.6.2.2">format=counter: <xref derivedContent="7" format="counter" target="hello"/></li>
+            <li pn="t-3.6.2.3">format=title: <xref derivedContent="This is a figure" format="title" target="hello"/></li>
+          </ul>
+        </li>
+        <li pn="t-3.7">
+          <t pn="t-3.7.1">Table</t>
+          <ul empty="false" pn="t-3.7.2" spacing="normal">
+            <li pn="t-3.7.2.1">no format: <xref derivedContent="Table 1" format="default" target="THE-TABLE"/></li>
+            <li pn="t-3.7.2.2">format=counter: <xref derivedContent="1" format="counter" target="THE-TABLE"/></li>
+            <li pn="t-3.7.2.3">format=title: <xref derivedContent="I AM THE TABLE" format="title" target="THE-TABLE"/></li>
+          </ul>
+        </li>
+        <li pn="t-3.8">
+          <t pn="t-3.8.1">Reference</t>
+          <ul empty="false" pn="t-3.8.2" spacing="normal">
+            <li pn="t-3.8.2.1">no format: <xref derivedContent="RFC6949" format="default" target="RFC6949"/></li>
+            <li pn="t-3.8.2.2">format=title: <xref derivedContent="RFC Series Format Requirements and Future Development" format="title" target="RFC6949"/></li>
+            <li pn="t-3.8.2.3">displayreference: <xref derivedContent="LANG-TAGS" format="default" target="RFC5646"/></li>
+          </ul>
+        </li>
+        <li pn="t-3.9">
+          <t pn="t-3.9.1">ReferenceGroup</t>
+          <ul empty="false" pn="t-3.9.2" spacing="normal">
+            <li pn="t-3.9.2.1">no format: <xref derivedContent="Bibble" format="default" target="Bibble"/></li>
+            <li pn="t-3.9.2.2">format=title: <xref derivedContent="Bibble" format="title" target="Bibble"/></li>
+            <li pn="t-3.9.2.3">displayreference: <xref derivedContent="EPP" format="default" target="STD69"/></li>
+          </ul>
+        </li>
+      </ul>
+      <ul empty="true" pn="t-4" spacing="normal">
+        <li pn="t-4.1"><iref item="Bullets" pn="i-Bullets-1" primary="true"/>Empty: it's all empty</li>
+        <li pn="t-4.2"><iref item="Bullets" pn="i-Bullets-2" primary="false"/>I have not bullets left</li>
+      </ul>
+      <ol pn="t-5" spacing="normal" start="1">
+        <li pn="t-5.1">
+          <t pn="t-5.1.1">now</t>
+          <t pn="t-5.1.2">then</t>
+        </li>
+        <li pn="t-5.2"><iref item="Bullets" pn="i-Bullets-Ordered-1" primary="false" subitem="Ordered"/>ordered</li>
+        <li pn="t-5.3">
+          <ol pn="t-5.3.1" spacing="normal" start="1">
+            <li pn="t-5.3.1.1">before</li>
+            <li anchor="nested-li" pn="t-5.3.1.2">A nested li</li>
+            <li pn="t-5.3.1.3">And a reference to <xref derivedContent="2" format="counter" target="nested-li"/></li>
+          </ol>
+        </li>
+      </ol>
+      <ol group="green" pn="t-6" spacing="normal" start="12" type="I">
+        <li pn="t-6.1">A dozen or so.</li>
+        <li pn="t-6.2">Now, with bakers. It's all about <xref derivedContent="Bibble" format="default" target="Bibble"/>.</li>
+      </ol>
+      <ol group="green" pn="t-7" spacing="normal" start="14" type="I">
+        <li pn="t-7.1">after bakers, before meanings</li>
+        <li pn="t-7.2">there are meaningless bakers</li>
+      </ol>
+      <ol group="green" pn="t-8" spacing="normal" start="16" type="I">
+        <li pn="t-8.1">who bake</li>
+        <li pn="t-8.2">bread with meaning</li>
+      </ol>
+      <ol group="green" pn="t-9" spacing="normal" start="42" type="I">
+        <li pn="t-9.1">The meaning of life.</li>
+        <li pn="t-9.2">The after-meaning of the after-life</li>
+      </ol>
+      <ol pn="t-10" spacing="normal" start="1" type="Requirement %c:">
+        <li pn="t-10.1">
+          Get up every morning with a smile on your face
+        </li>
+        <li pn="t-10.2">Show the world all the love in your heart</li>
+      </ol>
+      <ol pn="t-11" spacing="normal" start="26" type="Requirement %C:">
+        <li pn="t-11.1">Upper case</li>
+        <li pn="t-11.2">Above 26</li>
+      </ol>
+      <ol pn="t-12" spacing="normal" start="18" type="Requirement %i:">
+        <li pn="t-12.1">Wheels on a big rig</li>
+        <li pn="t-12.2">
+          Exercitation nisi quis in laborum ipsum esse excepteur
+          culpa.  Et pariatur anim labore pariatur qui adipisicing
+          consequat quis. Occaecat fugiat ad mollit ipsum occaecat
+          aliqua consectetur. Esse proident qui amet quis dolore
+          consectetur proident sunt ipsum exercitation veniam
+          exercitation amet. Nostrud exercitation magna officia
+          incididunt deserunt incididunt eiusmod veniam esse minim
+          non. Mollit non ad consectetur adipisicing nisi ex consequat
+          qui proident officia laboris duis adipisicing. Velit commodo
+          aliqua occaecat consequat nostrud anim ad ut. Quis aute eu
+          culpa dolore ut esse ea est elit occaecat. In cupidatat ea
+          ipsum est fugiat ad pariatur nulla.
+        </li>
+      </ol>
+      <t pn="t-13">This should be centered:</t>
+      <artwork align="center"
+               anchor="not-actually-ee"
+               pn="t-14"
+               type="poetry"
+               xml:lang="en">
+artwork does not
+     ALWAYS
+   have to be part of a figure.
+                            --0xEE cummings</artwork>
+      <artwork align="center" pn="t-15" type="ascii-art">
+some
+texting goes
+here</artwork>
+      <t pn="t-16">This should be pushed right:</t>
+      <artwork align="right" pn="t-17">Just a step to the right</artwork>
+      <figure pn="f-1">
+        <name slugifiedName="n-it-figures">It figures</name>
+        <artwork align="left" pn="f-1-1" type="ascii-art"><![CDATA[
+ ______________
+< hello, world >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+]]></artwork>
+      </figure>
+      <figure pn="f-2">
+        <name slugifiedName="n-inline-with-lesssvggreater-element">
+          Inline with &lt;svg&gt; element
+        </name>
+        <artwork align="left"
+                 alt="green stroke yellow fill circle"
+                 pn="f-2-1"
+                 type="svg">
+          <svg height="100"
+               width="100"
+               xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50"
+                    cy="50"
+                    fill="white"
+                    r="40"
+                    stroke="black"
+                    stroke-width="4"/>
+          </svg>
+        </artwork>
+      </figure>
+      <figure pn="f-3">
+        <name slugifiedName="n-inline-with-xinclude-right">
+          Inline with XInclude (right)
+        </name>
+        <artwork align="right" pn="f-3-1" type="svg">
+          <svg height="100"
+               width="100"
+               xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50"
+                    cy="50"
+                    fill="white"
+                    r="40"
+                    stroke="black"
+                    stroke-width="4"/>
+          </svg>
+        </artwork>
+      </figure>
+      <figure pn="f-4">
+        <name slugifiedName="n-svg-as-a-data-uri">
+          SVG as a data: URI
+        </name>
+        <artwork align="left" pn="f-4-1" type="svg">
+          <svg height="100"
+               width="100"
+               xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50"
+                    cy="50"
+                    fill="white"
+                    r="40"
+                    stroke="black"
+                    stroke-width="4"/>
+          </svg>
+        </artwork>
+      </figure>
+      <figure pn="f-5">
+        <name slugifiedName="n-inline-with-lesssrcgreater-attribute-center">
+          Inline with &lt;src&gt; attribute (center)
+        </name>
+        <artwork align="center"
+                 anchor="externalCircle"
+                 pn="f-5-1"
+                 type="svg">
+          <svg height="100"
+               width="100"
+               xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50"
+                    cy="50"
+                    fill="white"
+                    r="40"
+                    stroke="black"
+                    stroke-width="4"/>
+          </svg>
+        </artwork>
+      </figure>
+      <figure pn="f-6">
+        <name slugifiedName="n-inline-with-local-lesssrcgreater-attribute">
+          Inline with local &lt;src&gt; attribute
+        </name>
+        <artwork align="left" pn="f-6-1" type="svg">
+          <svg height="100"
+               width="100"
+               xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50"
+                    cy="50"
+                    fill="white"
+                    r="40"
+                    stroke="black"
+                    stroke-width="4"/>
+          </svg>
+        </artwork>
+      </figure>
+      <t pn="f-7">
+        Artwork can also be outside a figure. Here are two.
+      </t>
+      <artwork align="left"
+               alt="IETF logo"
+               pn="f-8"
+               src="data:image/gif;base64,R0lGODlhGAGVANUAAP///+/v797v/+/vxffvc8Xv5t7m5s7vxffeUubO3vfOUvfOQsXF1qXOzsXFvb3FvdbFQr29xb29vaW9tb2txb2tvb2tpa2ttealOpyllMWUOpyMrZyMjJyEWpyEGXOEjHOEWnOEKUKMa3Njc6VaGWNjUmtjGYRaGTpjUkJahGNKUmNKEDo6Wjo6Qjo6GRBCGWMpECEhGToQWiEZITEQMTEQCCEQCBAQMRAQECEIIQgACAAAAAAAAAAAAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNC4xLWMwMzQgNDYuMjcyOTc2LCBTYXQgSmFuIDI3IDIwMDcgMjI6Mzc6MzcgICAgICAgICI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOnhhcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyI+CiAgICAgICAgIDx4YXA6Q3JlYXRvclRvb2w+QWRvYmUgRmlyZXdvcmtzIENTMzwveGFwOkNyZWF0b3JUb29sPgogICAgICAgICA8eGFwOkNyZWF0ZURhdGU+MjAwNy0wMS0wNFQyMjoxMDozMVo8L3hhcDpDcmVhdGVEYXRlPgogICAgICAgICA8eGFwOk1vZGlmeURhdGU+MjAwOS0wNC0wNlQyMToyNjoyOVo8L3hhcDpNb2RpZnlEYXRlPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4KICAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9naWY8L2RjOmZvcm1hdD4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgCjw/eHBhY2tldCBlbmQ9InciPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PAA6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQBBwAAACwAAAAAGAGVAAAG/0CAcEgsGo/IpHLJbDqf0Kh0Sq1ar9isdsvter/gsHhMLpvP6LR6zW673/C4fE6v2+/4vH7P7/v/gIGCg4SFhoeIiYqLbwxmjmUSjJONEpJjDJZkEZqUnmiZlhdiDpadYJymn6uYFg+mEgZfqaYTYKESqay7XQyvtKdbmbQRDra9psACvMxWDK6ptMdauLmWFcFYpbXAzd5RpaGcERPjl1i40dYS01fpuebZ3/NGoRPJ1qkV6K6mDdiWxu27AitgQVPL6Ckc8gqfOoPtpAxb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"
+               type="binary-art"/>
+      <artwork align="left" pn="f-9" type="hex-dump">00000000  20 5f 5f 5f 5f 5f 5f 5f  5f 5f 5f 5f 5f 5f 5f 20  | ______________ |
+00000010  0a 3c 20 68 65 6c 6c 6f  2c 20 77 6f 72 6c 64 20  |.&lt; hello, world |
+00000020  3e 0a 20 2d 2d 2d 2d 2d  2d 2d 2d 2d 2d 2d 2d 2d  |&gt;. -------------|
+00000030  2d 20 0a 20 20 20 20 20  20 20 20 5c 20 20 20 5e  |- .        \   ^|
+00000040  5f 5f 5e 0a 20 20 20 20  20 20 20 20 20 5c 20 20  |__^.         \  |
+00000050  28 6f 6f 29 5c 5f 5f 5f  5f 5f 5f 5f 0a 20 20 20  |(oo)\_______.   |
+00000060  20 20 20 20 20 20 20 20  20 28 5f 5f 29 5c 20 20  |         (__)\  |
+00000070  20 20 20 20 20 29 5c 2f  5c 0a 20 20 20 20 20 20  |     )\/\.      |
+00000080  20 20 20 20 20 20 20 20  20 20 7c 7c 2d 2d 2d 2d  |          ||----|
+00000090  77 20 7c 0a 20 20 20 20  20 20 20 20 20 20 20 20  |w |.            |
+000000a0  20 20 20 20 7c 7c 20 20  20 20 20 7c 7c 0a        |    ||     ||.|
+000000ae
+</artwork>
+      <section pn="s-2.1" toc="include">
+        <name slugifiedName="n-foo">foo</name>
+        <t pn="s-2.1-1"><iref item="Paragraphs" pn="i-Paragraphs-first-2" primary="false" subitem="first"/>another</t>
+        <aside pn="s-2.1-2">
+          <t pn="s-2.1-2.1">
+            If this was an interesting section, it would have more
+            interesting things to say
+          </t>
+        </aside>
+        <dl hanging="true" pn="s-2.1-3" spacing="normal">
+          <dt pn="s-2.1-3.1">Fine</dt>
+          <dd pn="s-2.1-3.2">Not fine</dd>
+          <dt pn="s-2.1-3.3">Angry</dt>
+          <dd pn="s-2.1-3.4">Sad<sub><strong>weepy</strong></sub></dd>
+        </dl>
+        <dl hanging="true" pn="s-2.1-4" spacing="compact">
+          <dt pn="s-2.1-4.1">Whee!</dt>
+          <dd pn="s-2.1-4.2">Ugh. <em>Really</em> ugh.</dd>
+          <dt anchor="whoa" pn="s-2.1-4.3">
+            <tt>Woah!</tt>
+          </dt>
+          <dd pn="s-2.1-4.4">
+            <t pn="s-2.1-4.4.1">What<em>ever</em>. I guess I should have an ordered list here:</t>
+            <ol pn="s-2.1-4.4.2" spacing="normal" start="1">
+              <li pn="s-2.1-4.4.2.1">Won!</li>
+              <li pn="s-2.1-4.4.2.2">Too!</li>
+            </ol>
+          </dd>
+        </dl>
+        <figure anchor="hello" pn="f-7">
+          <name slugifiedName="n-this-is-a-figure">
+            This is a figure
+          </name>
+          <sourcecode anchor="helloworld" pn="f-7-1" type="c"><![CDATA[
+#include <stdio.h>
+
+int main(void)
+{
+    printf("hello, world\n");
+    return 0;
+}]]></sourcecode>
+        </figure>
+      </section>
+      <!-- TODO: Fix the inline sourcecode -->
+      <section pn="s-2.2" toc="include">
+        <name slugifiedName="n-yang-abnf">YANG ABNF</name>
+        <t pn="s-2.2-1">This is an example of a single ABNF file split across several inline blocks.  It should be recoverable with <tt>xmllint --xpath '//sourcecode[@name="yang.abnf"]/text()' test.x.xml</tt>.</t>
+        <sourcecode name="yang.abnf" pn="s-2.2-2" type="abnf"><![CDATA[
+module-stmt         = optsep module-keyword sep identifier-arg-str
+                     optsep
+                     "{" stmtsep
+                         module-header-stmts
+                         linkage-stmts
+                         meta-stmts
+                         revision-stmts
+                         body-stmts
+                     "}" optsep]]></sourcecode>
+        <t pn="s-2.2-3">Some text</t>
+        <sourcecode name="yang.abnf" pn="s-2.2-4" type="abnf"><![CDATA[
+submodule-stmt      = optsep submodule-keyword sep identifier-arg-str]]></sourcecode>
+        <t pn="s-2.2-5">Some text</t>
+        <sourcecode name="yang.abnf" pn="s-2.2-6" type="abnf"><![CDATA[
+                     optsep
+                     "{" stmtsep
+                         submodule-header-stmts
+                         linkage-stmts
+                         meta-stmts
+                         revision-stmts
+                         body-stmts
+                     "}" optsep]]></sourcecode>
+        <t pn="s-2.2-7">Some text</t>
+        <sourcecode name="yang.abnf" pn="s-2.2-8" type="abnf"><![CDATA[
+module-header-stmts = ;; these stmts can appear in any order
+                     [yang-version-stmt stmtsep]
+                      namespace-stmt stmtsep
+                      prefix-stmt stmtsep]]></sourcecode>
+        <t pn="s-2.2-9">Some text</t>
+        <sourcecode name="yang.abnf" pn="s-2.2-10" type="abnf"><![CDATA[
+submodule-header-stmts =
+                     ;; these stmts can appear in any order
+                     [yang-version-stmt stmtsep]
+                      belongs-to-stmt stmtsep]]></sourcecode>
+        <t pn="s-2.2-11">Some text</t>
+        <sourcecode name="yang.abnf" pn="s-2.2-12" type="abnf"><![CDATA[
+meta-stmts          = ;; these stmts can appear in any order
+                     [organization-stmt stmtsep]
+                     [contact-stmt stmtsep]
+                     [description-stmt stmtsep]
+                     [reference-stmt stmtsep]
+                     "}"]]></sourcecode>
+      </section>
+      <section pn="s-2.3" toc="include">
+        <name slugifiedName="n-python">Python</name>
+        <t pn="s-2.3-1">Trying some Python code</t>
+        <sourcecode name="paul.py" pn="s-2.3-2" type="python"><![CDATA[
+def foo():]]></sourcecode>
+        <sourcecode name="paul.py" pn="s-2.3-3" type="python"><![CDATA[
+  print("hello, world!")]]></sourcecode>
+      </section>
+      <section pn="s-2.4" toc="include">
+        <name slugifiedName="n-long-lines">Long lines</name>
+        <sourcecode pn="s-2.4-1" type="gibberish">
+This is gibberish: aklsdjalskjd aslkdj asldkj aslkdja sldkjasdklajd alkdjasdlkj dalkjd lajks dlkasjdaskjd asdlkjasd lkjds</sourcecode>
+      </section>
+      <section pn="s-2.5" toc="include">
+        <name slugifiedName="n-with-src">With src</name>
+        <sourcecode pn="s-2.5-1">{
+  "name": "draft-hildebrand-html-rfc",
+  "version": "1.0.0",
+  "description": "Tools for building xml2rfcv3 docs",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "bluebird": "3.3",
+    "express": "4.13",
+    "jade": "1.11",
+    "libxmljs": "0.18",
+    "resolve": "1.1",
+    "rfc-preptool": "latest",
+    "romanize": "0.1",
+    "through2": "2.0",
+    "vinyl-fs": "2.4",
+    "xmljade": "latest"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hildjj/draft-hildebrand-html-rfc.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/hildjj/draft-hildebrand-html-rfc/issues"
+  },
+  "homepage": "https://github.com/hildjj/draft-hildebrand-html-rfc"
+}
+</sourcecode>
+        <t pn="s-2.5-2">
+          Some docs might talk about svg, and need examples thereof:
+        </t>
+        <sourcecode pn="s-2.5-3" type="svg">&lt;svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;circle cx="50" cy="50" r="40"
+          stroke="black" fill="white"
+          stroke-width="4"/&gt;
+&lt;/svg&gt;
+</sourcecode>
+      </section>
+    </section>
+    <section pn="s-3" toc="include">
+      <name slugifiedName="n-iana-considerations">
+        IANA Considerations
+      </name>
+      <t pn="s-3-1">None</t>
+    </section>
+  </middle>
+  <back>
+    <displayreference target="STD69" to="EPP"/>
+    <displayreference target="RFC5646" to="LANG-TAGS"/>
+    <references anchor="norm" pn="s-4.1">
+      <name slugifiedName="n-normative-references">
+        Normative References
+      </name>
+      <reference anchor="GOST3410"
+                 quoteTitle="true"
+                 target="http://example.com/GOST34.10">
+        <front>
+          <title ascii="Information technology. Cryptographic data security. Signature and verification processes of [electronic] digital signature">
+            Информационная технология. Криптографическая защита
+            информации. Процессы формирования и проверки электронной
+            цифровой подписи
+          </title>
+          <author>
+            <organization ascii="Federal Agency on Technical Regulating and Metrology">
+              Государственный стандарт Российской Федерации
+            </organization>
+          </author>
+          <date year="2012"/>
+        </front>
+        <annotation>(In Russian)</annotation>
+        <seriesInfo name="GOST R" value="34.10-2012"/>
+      </reference>
+      <reference anchor="RFC2119"
+                 quoteTitle="true"
+                 target="http://www.rfc-editor.org/info/rfc2119">
+        <front>
+          <title>
+            Key words for use in RFCs to Indicate Requirement Levels
+          </title>
+          <author fullname="S. Bradner"
+                  initials="S."
+                  surname="Bradner">
+            <organization/>
+          </author>
+          <date month="March" year="1997"/>
+          <abstract pn="s-abstract">
+            <t>
+              In many standards track documents several words are used
+              to signify the requirements in the specification.  These
+              words are often capitalized. This document defines these
+              words as they should be interpreted in IETF documents.
+              This document specifies an Internet Best Current
+              Practices for the Internet Community, and requests
+              discussion and suggestions for improvements.
+            </t>
+          </abstract>
+        </front>
+        <seriesInfo name="BCP" value="14"/>
+        <seriesInfo name="RFC" value="2119"/>
+        <seriesInfo name="DOI" value="10.17487/RFC2119"/>
+      </reference>
+    </references>
+    <references pn="s-4.2">
+      <name slugifiedName="n-informative-references">
+        Informative References
+      </name>
+      <referencegroup anchor="Bibble">
+        <reference anchor="Bibble3"
+                   quoteTitle="false"
+                   target="http://example.com/bibble3">
+          <front>
+            <title>Bibble protocol spec</title>
+            <author fullname="No One" initials="N." surname="One"/>
+            <date year="1850"/>
+          </front>
+          <seriesInfo asciiName="BibbleSpecs"
+                      name="BibbleSpècs"
+                      value="12-4444"/>
+        </reference>
+        <reference anchor="Bibble2"
+                   quoteTitle="true"
+                   target="http://doi.org/10.17487/RFC2119">
+          <front>
+            <title ascii="Bibble use cases">Bi̬bble use cases</title>
+            <author asciiFullname="No One"
+                    asciiInitials="N."
+                    fullname="Ño One"
+                    initials="Ñ."
+                    surname="One"/>
+            <author asciiFullname="No Two"
+                    asciiInitials="N."
+                    fullname="Ño Two"
+                    initials="Ñ."
+                    surname="Two"/>
+            <author asciiFullname="No Three"
+                    asciiInitials="N."
+                    fullname="Ño Three"
+                    initials="Ñ."
+                    surname="Three"/>
+          </front>
+          <seriesInfo asciiName="BibbleSpecs"
+                      name="BibbleSpècs"
+                      value="12-4479"/>
+          <seriesInfo name="DOI" value="10.17487/RFC2119"/>
+        </reference>
+      </referencegroup>
+      <referencegroup anchor="STD69">
+        <reference anchor="RFC5734"
+                   quoteTitle="true"
+                   target="http://www.rfc-editor.org/info/rfc5734">
+          <front>
+            <title>
+              Extensible Provisioning Protocol (EPP) Transport over
+              TCP
+            </title>
+            <author fullname="S. Hollenbeck"
+                    initials="S."
+                    surname="Hollenbeck">
+              <organization/>
+            </author>
+            <date month="August" year="2009"/>
+            <abstract pn="s-abstract">
+              <t>
+                This document describes how an Extensible Provisioning
+                Protocol (EPP) session is mapped onto a single
+                Transmission Control Protocol (TCP) connection.  This
+                mapping requires use of the Transport Layer Security
+                (TLS) protocol to protect information exchanged
+                between an EPP client and an EPP server.  This
+                document obsoletes RFC 4934.  [STANDARDS-TRACK]
+              </t>
+            </abstract>
+          </front>
+          <seriesInfo name="STD" value="69"/>
+          <seriesInfo name="RFC" value="5734"/>
+          <seriesInfo name="DOI" value="10.17487/RFC5734"/>
+        </reference>
+        <reference anchor="RFC5730"
+                   quoteTitle="true"
+                   target="http://www.rfc-editor.org/info/rfc5730">
+          <front>
+            <title>Extensible Provisioning Protocol (EPP)</title>
+            <author fullname="S. Hollenbeck"
+                    initials="S."
+                    surname="Hollenbeck">
+              <organization/>
+            </author>
+            <date month="August" year="2009"/>
+            <abstract pn="s-abstract">
+              <t>
+                This document describes an application-layer
+                client-server protocol for the provisioning and
+                management of objects stored in a shared central
+                repository.  Specified in XML, the protocol defines
+                generic object management operations and an extensible
+                framework that maps protocol operations to objects.
+                This document includes a protocol specification, an
+                object mapping template, and an XML media type
+                registration.  This document obsoletes RFC 4930.
+                [STANDARDS-TRACK]
+              </t>
+            </abstract>
+          </front>
+          <seriesInfo name="STD" value="69"/>
+          <seriesInfo name="RFC" value="5730"/>
+          <seriesInfo name="DOI" value="10.17487/RFC5730"/>
+        </reference>
+        <reference anchor="RFC5731"
+                   quoteTitle="true"
+                   target="http://www.rfc-editor.org/info/rfc5731">
+          <front>
+            <title>
+              Extensible Provisioning Protocol (EPP) Domain Name
+              Mapping
+            </title>
+            <author fullname="S. Hollenbeck"
+                    initials="S."
+                    surname="Hollenbeck">
+              <organization/>
+            </author>
+            <date month="August" year="2009"/>
+            <abstract pn="s-abstract">
+              <t>
+                This document describes an Extensible Provisioning
+                Protocol (EPP) mapping for the provisioning and
+                management of Internet domain names stored in a shared
+                central repository.  Specified in XML, the mapping
+                defines EPP command syntax and semantics as applied to
+                domain names. This document obsoletes RFC 4931.
+                [STANDARDS-TRACK]
+              </t>
+            </abstract>
+          </front>
+          <seriesInfo name="STD" value="69"/>
+          <seriesInfo name="RFC" value="5731"/>
+          <seriesInfo name="DOI" value="10.17487/RFC5731"/>
+        </reference>
+        <reference anchor="RFC5732"
+                   quoteTitle="true"
+                   target="http://www.rfc-editor.org/info/rfc5732">
+          <front>
+            <title>
+              Extensible Provisioning Protocol (EPP) Host Mapping
+            </title>
+            <author fullname="S. Hollenbeck"
+                    initials="S."
+                    surname="Hollenbeck">
+              <organization/>
+            </author>
+            <date month="August" year="2009"/>
+            <abstract pn="s-abstract">
+              <t>
+                This document describes an Extensible Provisioning
+                Protocol (EPP) mapping for the provisioning and
+                management of Internet host names stored in a shared
+                central repository.  Specified in XML, the mapping
+                defines EPP command syntax and semantics as applied to
+                host names. This document obsoletes RFC 4932.
+                [STANDARDS-TRACK]
+              </t>
+            </abstract>
+          </front>
+          <seriesInfo name="STD" value="69"/>
+          <seriesInfo name="RFC" value="5732"/>
+          <seriesInfo name="DOI" value="10.17487/RFC5732"/>
+        </reference>
+        <reference anchor="RFC5733"
+                   quoteTitle="true"
+                   target="http://www.rfc-editor.org/info/rfc5733">
+          <front>
+            <title>
+              Extensible Provisioning Protocol (EPP) Contact Mapping
+            </title>
+            <author fullname="S. Hollenbeck"
+                    initials="S."
+                    surname="Hollenbeck">
+              <organization/>
+            </author>
+            <date month="August" year="2009"/>
+            <abstract pn="s-abstract">
+              <t>
+                This document describes an Extensible Provisioning
+                Protocol (EPP) mapping for the provisioning and
+                management of individual or organizational social
+                information identifiers (known as "contacts") stored
+                in a shared central repository.  Specified in
+                Extensible Markup Language (XML), the mapping defines
+                EPP command syntax and semantics as applied to
+                contacts.  This document obsoletes RFC 4933.
+                [STANDARDS-TRACK]
+              </t>
+            </abstract>
+          </front>
+          <seriesInfo name="STD" value="69"/>
+          <seriesInfo name="RFC" value="5733"/>
+          <seriesInfo name="DOI" value="10.17487/RFC5733"/>
+        </reference>
+      </referencegroup>
+      <reference anchor="RFC5646"
+                 quoteTitle="true"
+                 target="http://www.rfc-editor.org/info/rfc5646">
+        <front>
+          <title>Tags for Identifying Languages</title>
+          <author fullname="A. Phillips"
+                  initials="A."
+                  surname="Phillips"/>
+          <author fullname="M. Davis" initials="M." surname="Davis"/>
+          <date month="September" year="2009"/>
+          <abstract pn="s-abstract">
+            <t>
+              This document describes the structure, content,
+              construction, and semantics of language tags for use in
+              cases where it is desirable to indicate the language
+              used in an information object.  It also describes how to
+              register values for use in language tags and the
+              creation of user-defined extensions for private
+              interchange.  This document specifies an Internet Best
+              Current Practices for the Internet Community, and
+              requests discussion and suggestions for improvements.
+            </t>
+          </abstract>
+        </front>
+        <seriesInfo name="BCP" value="47"/>
+        <seriesInfo name="RFC" value="5646"/>
+        <format octets="208592"
+                target="http://www.rfc-editor.org/rfc/rfc5646.txt"
+                type="TXT"/>
+      </reference>
+      <reference anchor="RFC6949"
+                 quoteTitle="true"
+                 target="http://www.rfc-editor.org/info/rfc6949">
+        <front>
+          <title>
+            RFC Series Format Requirements and Future Development
+          </title>
+          <author fullname="H. Flanagan"
+                  initials="H."
+                  surname="Flanagan">
+            <organization/>
+          </author>
+          <author fullname="N. Brownlee"
+                  initials="N."
+                  surname="Brownlee">
+            <organization/>
+          </author>
+          <date month="May" year="2013"/>
+          <abstract pn="s-abstract">
+            <t>
+              This document describes the current requirements and
+              requests for enhancements for the format of the
+              canonical version of RFCs.  Terms are defined to help
+              clarify exactly which stages of document production are
+              under discussion for format changes.  The requirements
+              described in this document will determine what changes
+              will be made to RFC format.  This document updates RFC
+              2223.
+            </t>
+          </abstract>
+        </front>
+        <seriesInfo name="RFC" value="6949"/>
+        <seriesInfo name="DOI" value="10.17487/RFC6949"/>
+      </reference>
+    </references>
+    <section pn="s-A" toc="include">
+      <name slugifiedName="doing">Doing things in appendices</name>
+      <t pn="s-A-1">This is where you would put an appendix</t>
+      <section pn="s-A.1" toc="include">
+        <name slugifiedName="n-sub-appendix">Sub-appendix</name>
+        <t pn="s-A.1-1">Have parts, too</t>
+        <t pn="s-A.1-2">And more parts</t>
+      </section>
+    </section>
+    <section pn="s-B" toc="include">
+      <name slugifiedName="n-another-appendix">Another appendix</name>
+      <t pn="s-B-1">
+        This one is just as useless, but started with a title
+        attribute
+      </t>
+    </section>
+  </back>
+</rfc>
+<!-- ideally this comment stays in I-D mode -->
